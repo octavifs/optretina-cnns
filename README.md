@@ -5,12 +5,14 @@ This repository includes an implementation of the CNN architectures presented in
 
 We've also included code to evaluate trained Keras models and calculate the published metrics.
 
+
 ## Environment setup
 You can use conda to install all related dependencies to run this project.
 
 To create the environment run:
 
     $ conda env create -n optretina-cnns -f environment.yml
+
 
 ## Architecture model usage
 `models.py` contains the three architectures described in the paper implemented in Keras. It is possible to create a Keras model just by calling the function name, along with the number of output classes. For example:
@@ -25,6 +27,15 @@ To create the environment run:
 
 The optimizer has been set by default to use the parameters employed during training. The default input size of the images is also that which is presented in the paper.
 
+
 ## Keras model evaluation
+`testing.py` can be used to evaluate a trained Keras model on a set of images. The output is a CSV file that will contain the score per class. This CSV output can later be used to compute the reported metrics in the paper.
+
+	$ python testing.py 
+	usage: testing.py [-h] [--color {rgb,grayscale}] [--batch-size BATCH_SIZE]
+	                  [--column COLUMN]
+	                  images_path crop_size model_path csv_output
+	testing.py: error: the following arguments are required: images_path, crop_size, model_path, csv_output
+
 
 ## Calculate reported metrics and figures
