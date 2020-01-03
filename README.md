@@ -39,3 +39,4 @@ The optimizer has been set by default to use the parameters employed during trai
 
 
 ## Calculate reported metrics and figures
+You can start jupyter and execute the `dr_binary_simplified.ipynb` notebook. Before executing the notebook, change the variables on the second cell to reference your ground truth and evaluation CSV files.
